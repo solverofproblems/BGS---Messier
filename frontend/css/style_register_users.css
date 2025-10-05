@@ -1,0 +1,77 @@
+/*Aqui iremos importar algumas fontes para textos!*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    
+}
+
+.section {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.section img {
+    width: 500px;
+    margin-bottom: 7%;
+}
+
+.section h3 {
+    font-size: 27px;
+    font-weight: 300;
+    margin-bottom: 10%;
+}
+
+.section input {
+    
+    font-size: 20px;
+    margin-bottom: 3%;
+    padding: 20px 40px;
+    border-radius: 8px;
+    border: none;
+    border: 3px solid #0AA8E1;
+
+}
+
+.section button {
+    font-size: 18px;
+    padding: 20px 60px;
+    border: none;
+    border-radius: 12px;
+    background-color: blue;
+}
+
+.section input:focus {
+    outline: none;
+    border: 3px solid #F7BF2F; 
+}
+
+.section button {
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 20px 70px;
+    border-radius: 20px;
+    background-color: #0AA8E1;
+    cursor: pointer;
+    color: white;
+}
+
+.section button:hover {
+    background-color: #F7BF2F;  
+}

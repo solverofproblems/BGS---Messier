@@ -12,8 +12,54 @@
 html, body {
     display: flex;
     height: 100%;
-    text-align: center;
     justify-content: center;
+    align-items: center;    
+    font-family: "Montserrat", sans-serif;
+    background-color: #ececec
 }
 
+.section {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
 
+.section img {
+    margin-bottom: 10%;
+}
+
+.section h3 {
+    margin-bottom: 10%;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.section input {
+    text-indent: 0;
+    padding: 20px 40px;
+    font-size: 20px;
+    border-radius: 12px;
+    margin-bottom: 7%;
+    border: 3px solid #0AA8E1;
+}
+
+.section input:focus {
+    outline: none;
+    border: 3px solid #F7BF2F; 
+}
+
+.section button {
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 20px 70px;
+    border-radius: 20px;
+    background-color: #0AA8E1;
+    cursor: pointer;
+    color: white;
+}
+
+.section button:hover {
+    background-color: #F7BF2F;  
+}
