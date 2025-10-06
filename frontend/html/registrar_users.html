@@ -20,17 +20,19 @@
 
         <h3>Crie novos contatos para a Messier!</h3>
 
-        <input type="text" placeholder="Nome"></input>
-        <input type="text" placeholder="E-mail"></input>
-        <input type="text" placeholder="Telefone"></input>
-        <input type="text" placeholder="Empresa (opcional)"></input>
-        <input type="text" placeholder="LinkedIn (opcional)"></input>
+        <input id="name_content" type="text" placeholder="Nome"></input>
+        <input id="email_content" type="text" placeholder="E-mail"></input>
+        <input id="telef_content" type="text" placeholder="Telefone"></input>
+        <input id="empresa_content" type="text" placeholder="Empresa (opcional)"></input>
+        <input id="linkedin_content" type="text" placeholder="LinkedIn (opcional)"></input>
 
-        <button>Enviar</button>
+        <button onclick="criarContatos()">Enviar</button>
 
 
     </section>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 
 </body>
