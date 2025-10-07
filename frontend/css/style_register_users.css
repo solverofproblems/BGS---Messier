@@ -16,6 +16,7 @@ html, body {
     justify-content: center;
     align-items: center;
     font-family: "Montserrat", sans-serif;
+    background-color: #ececec
     
 }
 
@@ -74,4 +75,295 @@ html, body {
 
 .section button:hover {
     background-color: #F7BF2F;  
+}
+
+/* Sistema de Notificações */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 20px 30px;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    z-index: 1000;
+    transform: translateX(400px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.notification.error {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    border-left: 4px solid #ff4757;
+}
+
+.notification.success {
+    background: linear-gradient(135deg, #2ed573, #1dd1a1);
+    border-left: 4px solid #00d2d3;
+}
+
+.notification.warning {
+    background: linear-gradient(135deg, #ffa726, #ff9800);
+    border-left: 4px solid #ff9800;
+}
+
+.notification::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.notification.error::before {
+    content: '⚠';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.notification.success::before {
+    content: '✓';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.notification.warning::before {
+    content: '!';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.notification-text {
+    margin-left: 35px;
+}
+
+/* Tela de Carregamento */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(236, 236, 236, 0.95);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.loading-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.loading-container {
+    text-align: center;
+    color: #0AA8E1;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(10, 168, 225, 0.2);
+    border-top: 4px solid #0AA8E1;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.loading-subtext {
+    font-size: 14px;
+    color: #666;
+    font-weight: 300;
+}
+
+/* Animações para os inputs */
+.section input.error {
+    border-color: #ff6b6b;
+    animation: shake 0.5s ease-in-out;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+}
+
+.section input.success {
+    border-color: #2ed573;
+    box-shadow: 0 0 0 3px rgba(46, 213, 115, 0.1);
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Animação do botão durante carregamento */
+.section button.loading {
+    background-color: #F7BF2F;
+    cursor: not-allowed;
+    position: relative;
+    overflow: hidden;
+}
+
+.section button.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Efeito de foco suave nos inputs */
+.section input {
+    transition: all 0.2s ease;
+}
+
+.section input:focus {
+    transform: scale(1.02);
+}
+
+/* Responsividade - Mantendo a estética original */
+
+/* Tablets */
+@media (max-width: 768px) {
+    html, body {
+        padding: 20px;
+    }
+    
+    .section {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .section img {
+        max-width: 350px;
+        width: 100%;
+    }
+    
+    .section h3 {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 6%;
+    }
+    
+    .section input {
+        width: 100%;
+        max-width: 100%;
+        padding: 12px 18px;
+        font-size: 14px;
+        margin-bottom: 2%;
+    }
+    
+    .section button {
+        width: 100%;
+        max-width: 100%;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    .notification {
+        right: 15px;
+        left: 15px;
+        max-width: none;
+    }
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
+    html, body {
+        padding: 15px;
+    }
+    
+    .section img {
+        max-width: 280px;
+    }
+    
+    .section h3 {
+        font-size: 18px;
+        margin-bottom: 5%;
+    }
+    
+    .section input {
+        padding: 10px 15px;
+        font-size: 13px;
+        margin-bottom: 1.5%;
+    }
+    
+    .section button {
+        padding: 10px 18px;
+        font-size: 13px;
+    }
+}
+
+/* Smartphones muito pequenos */
+@media (max-width: 360px) {
+    .section img {
+        max-width: 220px;
+    }
+    
+    .section h3 {
+        font-size: 16px;
+        margin-bottom: 4%;
+    }
+    
+    .section input {
+        padding: 8px 12px;
+        font-size: 12px;
+        margin-bottom: 1%;
+    }
+    
+    .section button {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}
+
+/* Dispositivos grandes */
+@media (min-width: 1200px) {
+    .section {
+        max-width: 600px;
+    }
 }
