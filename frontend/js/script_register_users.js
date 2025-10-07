@@ -23,7 +23,7 @@ function criarContatos() {
             id_admin : usuarioLogado.id
         })
             .then(function (response) {
-                console.log(response);
+                console.log(response.data);
             })
             .catch(function (error) {
                 console.log(error);
@@ -35,8 +35,6 @@ function criarContatos() {
     } else {
         console.log('Informações faltando.')
     }
-
-
 
 
 }
